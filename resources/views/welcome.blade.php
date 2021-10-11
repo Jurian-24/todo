@@ -12,5 +12,7 @@
                 <router-view></router-view>
             </transition>
         </div>
+
+        <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>
