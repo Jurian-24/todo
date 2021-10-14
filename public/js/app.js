@@ -2608,8 +2608,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render),
 /* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "card" }, [
+    _c("header", [_vm._t("header")], 2),
+    _vm._v(" "),
+    _c("section", [_vm._t("body")], 2),
+    _vm._v(" "),
+    _c("footer", [_vm._t("footer")], 2)
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
@@ -2677,21 +2689,21 @@ var render = function() {
           {
             key: "header",
             fn: function() {
-              return [_c("h1", [_vm._v(_vm._s(_vm.group.title))])]
+              return [_c("h1", [_vm._v(_vm._s(_vm.todo.title))])]
             },
             proxy: true
           },
           {
             key: "body",
             fn: function() {
-              return [_c("p", [_vm._v(_vm._s(_vm.group.info))])]
+              return [_c("p", [_vm._v(_vm._s(_vm.todo.info))])]
             },
             proxy: true
           },
           {
             key: "footer",
             fn: function() {
-              return [_c("p", [_vm._v(_vm._s(_vm.group.done))])]
+              return [_c("p", [_vm._v(_vm._s(_vm.todo.done))])]
             },
             proxy: true
           }

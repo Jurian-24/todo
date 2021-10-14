@@ -3,15 +3,15 @@
         <todo-card>
 
             <template #header>
-                <h1>{{ group.title }}</h1>
+                <h1>{{ todo.title }}</h1>
             </template>
 
              <template #body>
-                <p>{{ group.info }}</p>
+                <p>{{ todo.info }}</p>
             </template>
 
              <template #footer>
-                <p>{{ group.done }}</p>
+                <p>{{ todo.done }}</p>
             </template>
 
         </todo-card>
@@ -32,6 +32,6 @@ import Card from '../components/Card';
                 default: () => ({}),
             },
         }
-        
+
     }
 </script>
