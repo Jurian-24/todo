@@ -1,14 +1,10 @@
 <template>
-    <div class="card">
-        <header>
-            <slot name="header"></slot>
-        </header>
+    <div class="card">  
+        <slot name="header"></slot>
     <section>
         <slot name="body"></slot>
-    </section>     
-    <footer>
+    </section>
         <slot name="footer"></slot>
-    </footer>
     </div>
 </template>
 

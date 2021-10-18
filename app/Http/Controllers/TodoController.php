@@ -14,7 +14,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        return Todo::all();
+        return Todo::orderBy('id', 'DESC')->get();
     }
 
     /**
@@ -35,7 +35,15 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Todo::create([
+            'title' => $request->title,
+            'info'  => $request->info,
+            'done'  => 0,
+        ]);
+
+        // return Todo::orderBy('id', 'DESC')->get();
+        return $this->index();
     }
 
     /**
@@ -69,7 +77,12 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todo $todo)
     {
-        //
+        $todo->done = !$todo->done;
+
+        $todo->save();
+
+        return $this->index();
+
     }
 
     /**
@@ -78,8 +91,11 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Todo $todo)
+    public function delete(Todo $todo)
     {
-        //
+        $todo->delete();
+
+        return $this->index();
+
     }
 }
