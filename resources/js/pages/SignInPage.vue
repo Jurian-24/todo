@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form @submit.prevent="submit()">
         <div>
             <label for="">E-mail: </label>
             <input type="email" name="email">            
@@ -17,10 +17,30 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { mapActions } from 'vuex';
+
     export default {
         name: 'sign-in',
+        data () {
+            return {
+                form: {
+                    email: '',
+                    password: '',
+                }
+            }
+        },
         components: {
             
-        }
+        },
+        methods: {
+            ...mapActions({
+                signIn: 'auth/signIn'
+            }),
+
+            submit() {
+                this.signIn(this.form).catch();
+            }
+        },
     }
 </script>
